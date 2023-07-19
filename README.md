@@ -11,8 +11,8 @@
 
 
 
-# Product Catalog: The application provides a well-organized and extensive product catalog, categorizing items into various categories, such as electronics, clothing, accessories, etc. Users can easily browse and search for products of interest.
+Product Catalog: The application provides a well-organized and extensive product catalog, categorizing items into various categories, such as electronics, clothing, accessories, etc. Users can easily browse and search for products of interest.
 
-# Product Listings and Details: Each product is displayed with detailed information, including descriptions, specifications, prices, availability, and customer reviews. High-quality product images are also provided to assist users in making informed purchasing decisions.
+Product Listings and Details: Each product is displayed with detailed information, including descriptions, specifications, prices, availability, and customer reviews. High-quality product images are also provided to assist users in making informed purchasing decisions.
 
-# Shopping Cart: Users can add products to their shopping cart while browsing, enabling them to collect multiple items before proceeding to the checkout process. The cart functionality allows for easy management of selected items, including quantity adjustments and removals.
+Shopping Cart: Users can add products to their shopping cart while browsing, enabling them to collect multiple items before proceeding to the checkout process. The cart functionality allows for easy management of selected items, including quantity adjustments and removals.
