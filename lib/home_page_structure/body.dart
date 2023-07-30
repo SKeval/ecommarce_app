@@ -94,7 +94,7 @@ class _Body_HomeState extends State<Body_Home> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Padding(
-                      padding: const EdgeInsets.only(top: 35),
+                      padding: const EdgeInsets.only(top: 30),
                       child: GridView.builder(
                         itemCount: EmpList.length,
                         gridDelegate:
@@ -122,12 +122,12 @@ class _Body_HomeState extends State<Body_Home> {
                                   )),
                               height: 300,
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 15),
+                                padding: const EdgeInsets.only(top: 7),
                                 child: Column(
                                   children: [
                                     Container(
-                                      height: 101,
-                                      width: 101,
+                                      height: 100,
+                                      width: 100,
                                       decoration: BoxDecoration(
                                           color: primaryColor,
                                           image: DecorationImage(

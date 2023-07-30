@@ -1,4 +1,4 @@
-import 'package:ecommarce_app/screens/homepage.dart';
+import 'package:ecommarce_app/screens/auth/login.dart';
 import 'package:ecommarce_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const Login_Page(),
     );
   }
 }

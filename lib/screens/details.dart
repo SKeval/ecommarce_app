@@ -120,7 +120,7 @@ class _DetailsState extends State<Details> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Cart_Page(),
+                                    builder: (context) => const Cart_Page(),
                                   ));
                             },
                             child: const Icon(Icons.shopping_cart),

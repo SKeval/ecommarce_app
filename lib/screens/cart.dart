@@ -1,10 +1,10 @@
 // ignore_for_file: camel_case_types
 
-import 'package:ecommarce_app/screens/homepage.dart';
 import 'package:ecommarce_app/utils/appbar.dart';
 import 'package:ecommarce_app/utils/bottom_navigation_bar.dart';
 import 'package:ecommarce_app/utils/colors.dart';
 import 'package:ecommarce_app/utils/datalists.dart';
+import 'package:ecommarce_app/utils/drawer.dart';
 import 'package:ecommarce_app/utils/txts.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,6 @@ class _Cart_PageState extends State<Cart_Page> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     total();
   }
@@ -37,17 +36,7 @@ class _Cart_PageState extends State<Cart_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigation(index: 2),
-      drawer: Drawer(
-        child: IconButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  ));
-            },
-            icon: Icon(Icons.home)),
-      ),
+      drawer: drawerContent(context),
       appBar: apbar(),
       body: Column(
         children: [
@@ -62,7 +51,7 @@ class _Cart_PageState extends State<Cart_Page> {
                     child: Row(
                       children: [
                         Container(
-                          margin: EdgeInsets.all(8),
+                          margin: const EdgeInsets.all(8),
                           height: 120,
                           width: 110,
                           decoration: BoxDecoration(
@@ -122,7 +111,7 @@ class _Cart_PageState extends State<Cart_Page> {
                                                   total();
                                                 });
                                               },
-                                              icon: Icon(Icons.add)),
+                                              icon: const Icon(Icons.add)),
                                           Txts(
                                             title:
                                                 "${EmpCart[index].countCart}",
@@ -168,7 +157,7 @@ class _Cart_PageState extends State<Cart_Page> {
               child: ListTile(
                 title: Txts(title: "Total"),
                 subtitle: Txts(
-                  title: "\$ $_total",
+                  title: "\$${_total.toStringAsFixed(2)}",
                   size: 20,
                   weight: FontWeight.bold,
                 ),

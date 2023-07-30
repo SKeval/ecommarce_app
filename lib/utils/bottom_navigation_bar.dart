@@ -1,5 +1,8 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:ecommarce_app/screens/cart.dart';
 import 'package:ecommarce_app/screens/homepage.dart';
+import 'package:ecommarce_app/screens/profile.dart';
 import 'package:ecommarce_app/utils/colors.dart';
 import 'package:ecommarce_app/utils/datalists.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +16,6 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -32,6 +34,12 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const HomePage(),
+                  ));
+            } else if (widget.index == 3) {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Profile_Page(),
                   ));
             }
           });
