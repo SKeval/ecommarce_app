@@ -19,8 +19,9 @@ class _Header_HomeState extends State<Header_Home> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        //Search Bar
         Container(
-          margin: const EdgeInsets.only(top: 20, right: 20, left: 20),
+          margin: const EdgeInsets.only(top: 10, right: 20, left: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

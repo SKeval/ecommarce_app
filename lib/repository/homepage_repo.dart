@@ -12,9 +12,6 @@ class HomePage_Repo {
     String url = "${Appconst.baseurl}products";
     var response = await http.get(Uri.parse(url));
 
-    print(response.statusCode);
-    print(response.body);
-
     var items = jsonDecode(response.body.toString());
     if (response.statusCode == 200) {
       for (Map<String, dynamic> element in items) {

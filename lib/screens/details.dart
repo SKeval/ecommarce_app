@@ -68,12 +68,17 @@ class _DetailsState extends State<Details> {
             bottom: 0,
             left: 0,
             right: 0,
+
+            //content of product
+
             child: SizedBox(
-              height: 320,
+              height: 300,
               // color: Colors.red,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    //Name
+
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: ListTile(
@@ -93,17 +98,22 @@ class _DetailsState extends State<Details> {
                         ),
                       ),
                     ),
+
+                    //Description
+
                     Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.only(
+                          bottom: 10, left: 25, right: 25),
                       height: 100,
                       child: SingleChildScrollView(
-                        child: Txts(
-                            title: widget.ep.description, isOverflow: true),
+                        child: Wrap(children: [
+                          Txts(title: widget.ep.description),
+                        ]),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 30),
+                      padding: const EdgeInsets.only(
+                          bottom: 20, left: 30, right: 30),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -133,13 +143,15 @@ class _DetailsState extends State<Details> {
               ),
             ),
           ),
+
+          //Picture of Product
           Positioned(
             top: 0,
             left: 0,
             right: 0,
             child: Container(
               //margin: const EdgeInsets.all(20),
-              height: 500,
+              height: 480,
               decoration: const BoxDecoration(
                   color: Colors.white,
                   boxShadow: [BoxShadow(blurRadius: 50, spreadRadius: 5)],

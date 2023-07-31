@@ -30,7 +30,7 @@ class _Body_HomeState extends State<Body_Home> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 30, left: 20.0, right: 20),
+          padding: const EdgeInsets.only(top: 20, left: 20.0, right: 20),
           child: SizedBox(
             height: 40,
             child: Row(
@@ -75,20 +75,18 @@ class _Body_HomeState extends State<Body_Home> {
             ),
           ),
         ),
-        RefreshIndicator(
-          onRefresh: () {
-            return Future.delayed(const Duration(seconds: 3)).then((value) {
-              setState(() {
-                empfuture = null;
-              });
 
-              setState(() {
-                empfuture = HomePage_Repo().getAPIList();
+        //Refresh Product
+        Expanded(
+          child: RefreshIndicator(
+            onRefresh: () {
+              return Future.delayed(const Duration(seconds: 3)).then((value) {
+                setState(() {
+                  empfuture = HomePage_Repo().getAPIList();
+                });
               });
-            });
-          },
-          child: SizedBox(
-            height: 350,
+            },
+            //products start here
             child: FutureBuilder(
                 future: empfuture,
                 builder: (context, snapshot) {
@@ -103,6 +101,7 @@ class _Body_HomeState extends State<Body_Home> {
                                 crossAxisSpacing: 10,
                                 maxCrossAxisExtent: 200),
                         itemBuilder: (context, index) {
+                          //content product
                           return InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
@@ -110,45 +109,44 @@ class _Body_HomeState extends State<Body_Home> {
                                     Details(ep: EmpList[index]),
                               ));
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
+                            child: Card(
+                              elevation: 15,
+                              child: Container(
+                                decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(40),
-                                  boxShadow: const [
-                                    BoxShadow(blurRadius: 1, spreadRadius: 1)
-                                  ],
-                                  border: Border.all(
-                                    style: BorderStyle.solid,
-                                  )),
-                              height: 300,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 7),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 100,
-                                      width: 100,
-                                      decoration: BoxDecoration(
-                                          color: primaryColor,
-                                          image: DecorationImage(
-                                              fit: BoxFit.fill,
-                                              image: Image.network(
-                                                      EmpList[index].image)
-                                                  .image),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(15))),
-                                    ),
-                                    ListTile(
-                                        title: Txts(
-                                          // isOverflow: false,
-                                          title: EmpList[index]
-                                              .title
-                                              .split(" ")[0],
-                                        ),
-                                        subtitle: Txts(
-                                            title:
-                                                "\$ ${EmpList[index].price}"))
-                                  ],
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                height: 300,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 7),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: 90,
+                                        width: 90,
+                                        decoration: BoxDecoration(
+                                            color: primaryColor,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: Image.network(
+                                                        EmpList[index].image)
+                                                    .image),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(15))),
+                                      ),
+                                      ListTile(
+                                          title: Txts(
+                                            // isOverflow: false,
+                                            title: EmpList[index]
+                                                .title
+                                                .split(" ")[0],
+                                          ),
+                                          subtitle: Txts(
+                                              title:
+                                                  "\$ ${EmpList[index].price}"))
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

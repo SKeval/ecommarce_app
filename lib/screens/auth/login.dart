@@ -4,6 +4,7 @@ import 'package:ecommarce_app/repository/login_repo.dart';
 import 'package:ecommarce_app/screens/auth/registration.dart';
 import 'package:ecommarce_app/screens/homepage.dart';
 import 'package:ecommarce_app/utils/colors.dart';
+import 'package:ecommarce_app/utils/shared_preffrence.dart';
 import 'package:ecommarce_app/utils/textfield.dart';
 import 'package:ecommarce_app/utils/txts.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,30 @@ class Login_Page extends StatefulWidget {
 class _Login_PageState extends State<Login_Page> {
   final TextEditingController _usercon = TextEditingController();
   final TextEditingController _passcon = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    Preffrence().getToken().then((value) {
+      if (value != 'NA') {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const HomePage(),
+          ),
+        );
+      }
+    });
+  }
+
+  saveToken(String token) {
+    Preffrence().setValue(token).then((value) {
+      print('on save:' + token);
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,9 +132,8 @@ class _Login_PageState extends State<Login_Page> {
                       .checkAuth(_usercon.text.trim(), _passcon.text.trim())
                       .then(
                     (value) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ));
+                      print('after aPi : $value');
+                      saveToken(value);
                     },
                   );
                 },

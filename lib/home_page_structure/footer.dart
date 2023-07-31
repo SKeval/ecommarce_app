@@ -13,9 +13,6 @@ class Footer_Body extends StatefulWidget {
 class _Footer_BodyState extends State<Footer_Body> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        bottomNavigationBar: BottomNavigation(
-      index: 0,
-    ));
+    return Scaffold();
   }
 }

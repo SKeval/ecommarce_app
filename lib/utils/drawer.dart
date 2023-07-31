@@ -1,5 +1,9 @@
 import 'package:ecommarce_app/screens/cart.dart';
+import 'package:ecommarce_app/screens/help.dart';
 import 'package:ecommarce_app/screens/homepage.dart';
+import 'package:ecommarce_app/screens/privacy_policy.dart';
+import 'package:ecommarce_app/screens/profile.dart';
+import 'package:ecommarce_app/screens/terms_conditions.dart';
 import 'package:ecommarce_app/utils/txts.dart';
 import 'package:flutter/material.dart';
 
@@ -44,37 +48,50 @@ Widget drawerContent(BuildContext context) {
           ),
         ),
         listDrawer(Icons.home, "Home", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => const HomePage(),
           ));
         }),
         listDrawer(Icons.shopping_cart, "List", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => const HomePage(),
           ));
         }),
         listDrawer(Icons.list, "Cart", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => const Cart_Page(),
           ));
         }),
         listDrawer(Icons.person, "Profile", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => const HomePage(),
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const Profile_Page(),
+          ));
+        }),
+        listDrawer(Icons.private_connectivity, "Privacy Policy", () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const Privacy_Policy(),
           ));
         }),
         listDrawer(Icons.menu_book, "Terms & Conditions", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => const HomePage(),
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const Terms_Conditions(),
           ));
         }),
         listDrawer(Icons.help, "Help", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => const HomePage(),
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const Help_Page(),
           ));
         }),
         listDrawer(Icons.logout, "Log Out", () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => const HomePage(),
           ));
         }),
