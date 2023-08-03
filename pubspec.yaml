@@ -41,6 +41,7 @@ dependencies:
   animated_splash_screen: 
   webview_flutter: 
   shared_preferences: 
+  url_launcher: 
 
 
 dev_dependencies:

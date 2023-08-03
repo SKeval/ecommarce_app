@@ -1,4 +1,3 @@
-import 'package:ecommarce_app/screens/auth/login.dart';
 import 'package:ecommarce_app/screens/splash_screen.dart';
 import 'package:ecommarce_app/utils/colors.dart';
 import 'package:flutter/material.dart';
